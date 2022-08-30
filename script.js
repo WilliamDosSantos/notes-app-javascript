@@ -60,10 +60,12 @@ function addOnChange() {
   });
 }
 
-function removeItem(i) {
-  items_db.splice(i, 1);
-  localStorage.setItem("items_db", JSON.stringify(items_db));
-  loadItems();
+function removeItem(i, div) {
+  if (i !== undefined) {
+    items_db.splice(i, 1);
+    localStorage.setItem("items_db", JSON.stringify(items_db));
+    loadItems();
+  }
 }
 
 function verifyNulls() {
